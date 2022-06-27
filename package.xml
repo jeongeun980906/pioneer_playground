@@ -1,0 +1,15 @@
+<package>
+<name>pioneer_playground</name>
+<version>1.0.0</version>
+<description>Example gazebo world, model and launch files for simulating Adept MobileRobots/ActivMedia robots for use with ROS</description>
+<maintainer email="baro0906@korea.ac.kr">Jeongeun Park</maintainer>
+<url type="website">http://wiki.ros.org/Robots/Pioneer</url>
+<author email="baro0906@korea.ac.kr">Jeongeun Park</author>
+<author>Adept MobileRobots</author>
+<license>BSD</license>
+<run_depend>gazebo_ros_pkgs</run_depend>
+<export>
+<gazebo_ros gazebo_model_path="${prefix}/models"/>
+<gazebo_ros gazebo_media_path="${prefix}/models"/>
+</export>
+</package>
