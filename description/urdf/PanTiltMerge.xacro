@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<robot name="PanTiltMerge" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find pioneer_playground)/description/urdf/materials.xacro" />
+<xacro:include filename="$(find pioneer_playground)/description/urdf/PanTiltMerge.trans" />
+<xacro:include filename="$(find pioneer_playground)/description/urdf/PanTiltMerge.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-5.232320800743009e-09 -0.011675026445706529 -0.001243359375873323" rpy="0 0 0"/>
+    <mass value="0.4289043067180927"/>
+    <inertia ixx="0.000168" iyy="8.1e-05" izz="0.000154" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://pioneer_playground/description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://pioneer_playground/description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component14_1">
+  <inertial>
+    <origin xyz="-0.0001512609043505653 -0.0003478894806370932 0.026515354837247523" rpy="0 0 0"/>
+    <mass value="0.386848751476802"/>
+    <inertia ixx="0.000119" iyy="0.000111" izz="6.5e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.019" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://pioneer_playground/description/meshes/Component14_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.019" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://pioneer_playground/description/meshes/Component14_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component148_1">
+  <inertial>
+    <origin xyz="0.0009536087233993468 0.01688485145444989 0.027606542091649172" rpy="0 0 0"/>
+    <mass value="0.5157672422003375"/>
+    <inertia ixx="0.000396" iyy="0.000145" izz="0.000374" ixy="1e-06" iyz="-3.6e-05" ixz="-4e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.000202 0.019 -0.059365" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://pioneer_playground/description/meshes/Component148_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.000202 0.019 -0.059365" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://pioneer_playground/description/meshes/Component148_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev11" type="continuous">
+  <origin xyz="0.0 0.0 0.019" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Component14_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rev12" type="continuous">
+  <origin xyz="-0.000202 -0.019 0.040365" rpy="0 0 0"/>
+  <parent link="Component14_1"/>
+  <child link="Component148_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+</robot>
