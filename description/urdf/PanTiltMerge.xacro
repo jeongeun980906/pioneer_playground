@@ -4,6 +4,16 @@
 <xacro:include filename="$(find pioneer_playground)/description/urdf/materials.xacro" />
 <xacro:include filename="$(find pioneer_playground)/description/urdf/PanTiltMerge.trans" />
 <xacro:include filename="$(find pioneer_playground)/description/urdf/PanTiltMerge.gazebo" />
+
+
+  <link name="world"/>
+
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
+
 <link name="base_link">
   <inertial>
     <origin xyz="-5.232320800743009e-09 -0.011675026445706529 -0.001243359375873323" rpy="0 0 0"/>

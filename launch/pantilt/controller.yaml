@@ -1,4 +1,4 @@
-PanTiltMerge_controller:
+PanTiltMerge:
   # Publish all joint states -----------------------------------
   joint_state_controller:
     type: joint_state_controller/JointStateController

@@ -4,8 +4,13 @@
 <xacro:property name="body_color" value="Gazebo/Silver" />
 
 <gazebo>
-  <plugin name="control" filename="libgazebo_ros_control.so"/>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <robotNamespace>/PanTiltMerge</robotNamespace>
+    <!-- <robotParam>$(find pioneer_playground)/description/urdf</robotParam> -->
+    <!-- <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType> -->
+   </plugin>
 </gazebo>
+
 <gazebo reference="base_link">
   <material>${body_color}</material>
   <mu1>0.2</mu1>
